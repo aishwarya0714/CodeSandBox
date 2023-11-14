@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
 function App() {
-  var count = 0;
-
+  const [state, setState] = useState(0);
+  console.log(state);
   function increaseCount() {
-    count++;
+    setState(state + 1);
+  }
+  function decreaseCount() {
+    setState(state - 1);
   }
   return (
     <div className="container">
-      <h1>{count}</h1>
+      <h1>{state}</h1>
       <button onClick={increaseCount}>+</button>
+      <button onClick={decreaseCount}>-</button>
     </div>
   );
 }
